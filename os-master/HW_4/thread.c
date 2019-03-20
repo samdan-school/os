@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+    Compile with
+    gcc thread.c -pthread -o t && ./t
+*/
+
 #define N_OF_THREAD 100
 
 void *find_prime(void *arg) {
