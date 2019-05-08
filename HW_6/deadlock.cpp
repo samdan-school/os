@@ -1,7 +1,7 @@
 // ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-// #include "pch.h"
+#include "pch.h"
 #include <stdio.h> 
 
 // Banker's Algorithm 
@@ -18,7 +18,7 @@ int main()
 						{ 0, 6, 3, 2 }, // P3 
 						{ 0, 0, 1, 4 } }; // P4 
 
-	int max[n][m] = { { 0, 0, 1, 2 }, // P0    // MAX Matrix 
+	int max[n][m] = { { 100, 0, 1, 2 }, // P0    // MAX Matrix 
 						{ 1, 7, 5, 0 }, // P1 
 						{ 2, 3, 5, 6 }, // P2 
 						{ 0, 6, 5, 2 }, // P3 
@@ -59,6 +59,13 @@ int main()
 					f[i] = 1;
 				}
 			}
+		}
+	}
+
+	for (i = 0; i < n; i++) {
+		if (f[i] == 0) {
+			printf("Deadlock occured in P%d", i);
+			return (1);
 		}
 	}
 
